@@ -1,0 +1,10 @@
+W4 — źródła i status
+
+Referat: assets/referat.txt
+Notatnik: https://notebook.google.com/notebook/fea1315a-972a-45a2-899c-92ffb4df2f7b
+Shao i in. (2018): https://www.nature.com/articles/s41467-018-06930-7 ; rycina 1, CC BY 4.0, bez zmian.
+
+Media Studio: komory echa, viralowość, boty. Krótkie filmy; główny film kazusów nie jest częścią podstawowego przebiegu.
+
+Własne opracowanie: posty, historia szkoły, pytania, model rankingu, fiszki, mapa, quiz. Nie są kopią niedostępnych aplikacji NotebookLM.
+Nowe kolaże AI mają funkcję ilustracyjną; nie są dokumentacją badań.

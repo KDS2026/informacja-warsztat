@@ -105,29 +105,29 @@ PRZERWA | lekcja 1, minuta 45
 
 13. Rozgrzewka: rozpoznajcie mechanizmy
 
+Rozgrzewka · przykład 1 z 6 | lekcja 2, minuta 0
+
 Rozgrzewka · przykład 1 z 6 | lekcja 2, minuta 0.5
 
-Rozgrzewka · przykład 1 z 6 | lekcja 2, minuta 1
+Rozgrzewka · przykład 2 z 6 | lekcja 2, minuta 1
 
 Rozgrzewka · przykład 2 z 6 | lekcja 2, minuta 1.5
 
-Rozgrzewka · przykład 2 z 6 | lekcja 2, minuta 2
+Rozgrzewka · przykład 3 z 6 | lekcja 2, minuta 2
 
 Rozgrzewka · przykład 3 z 6 | lekcja 2, minuta 2.5
 
-Rozgrzewka · przykład 3 z 6 | lekcja 2, minuta 3
+Rozgrzewka · przykład 4 z 6 | lekcja 2, minuta 3
 
 Rozgrzewka · przykład 4 z 6 | lekcja 2, minuta 3.5
 
-Rozgrzewka · przykład 4 z 6 | lekcja 2, minuta 4
+Rozgrzewka · przykład 5 z 6 | lekcja 2, minuta 4
 
 Rozgrzewka · przykład 5 z 6 | lekcja 2, minuta 4.5
 
-Rozgrzewka · przykład 5 z 6 | lekcja 2, minuta 5
+Rozgrzewka · przykład 6 z 6 | lekcja 2, minuta 5
 
 Rozgrzewka · przykład 6 z 6 | lekcja 2, minuta 5.5
-
-Rozgrzewka · przykład 6 z 6 | lekcja 2, minuta 6
 
 
 14. Wracamy do szkolnego sklepiku

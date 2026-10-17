@@ -8,10 +8,13 @@ const elapsed=b=>(b.ms||0)+(b.since?Date.now()-b.since:0);
 const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(state))}catch{}};
 const fmt=ms=>{const s=Math.floor(ms/1000);return `${Math.floor(s/60)}:${String(s%60).padStart(2,'0')}`};
 function stage(){const counter=document.querySelector('#counter');if(!counter)return;const n=parseInt(counter.textContent)-1;const minute=document.querySelector('.lesson-minute');if(!minute)return;const m=Number(minute.dataset.minute),lesson=Number(minute.dataset.lesson);return {n,m,lesson};}
-function draw(){const s=stage();if(!s)return;active=s;let b=state.blocks[s.lesson]||(state.blocks[s.lesson]={ms:0,since:null});let box=document.querySelector('#lessonClock');if(!box){box=document.createElement('div');box.id='lessonClock';box.innerHTML='<button id="clockFace" aria-expanded="false"></button><div id="clockControls" hidden><span id="clockInfo"></span><button id="clockToggle"></button><button id="clockReset">Od początku lekcji</button></div>';document.querySelector('.shell').append(box);
+function draw(){const s=stage();if(!s)return;active=s;let b=state.blocks[s.lesson]||(state.blocks[s.lesson]={ms:0,since:null});let box=document.querySelector('#lessonClock');if(!box){box=document.createElement('div');box.id='lessonClock';box.innerHTML='<button id="clockFace" aria-expanded="false"></button><div id="clockControls" hidden><span id="clockInfo"></span></div>';document.querySelector('.shell').append(box);
+const center=document.createElement('div');center.id='footerCenter';const hint=document.querySelector('#stageLabel');hint.replaceWith(center);center.append(hint);
+const actions=document.createElement('div');actions.className='clock-actions';actions.innerHTML='<button id="clockToggle" type="button"></button><button id="clockReset" type="button" aria-label="Restart lekcji" title="Restart lekcji">↺</button>';center.append(actions);
+document.addEventListener('fullscreenchange',()=>{(document.fullscreenElement?box.querySelector('#clockControls'):center).append(actions);});
 box.querySelector('#clockFace').onclick=()=>{const panel=box.querySelector('#clockControls');panel.hidden=!panel.hidden;box.querySelector('#clockFace').setAttribute('aria-expanded',String(!panel.hidden));};
-box.querySelector('#clockToggle').onclick=()=>{const x=state.blocks[active.lesson];if(x.since){x.ms=elapsed(x);x.since=null}else x.since=Date.now();save();draw();};
-box.querySelector('#clockReset').onclick=()=>{state.blocks[active.lesson]={ms:0,since:null};save();draw();};}
+document.querySelector('#clockToggle').onclick=()=>{const x=state.blocks[active.lesson];if(x.since){x.ms=elapsed(x);x.since=null}else x.since=Date.now();save();draw();};
+document.querySelector('#clockReset').onclick=()=>{state.blocks[active.lesson]={ms:0,since:null};save();draw();};}
 const mins=elapsed(b)/60000;
 const times=deck.flatMap(x=>x.stages).filter(x=>x.lesson===s.lesson&&x.lessonMinute>s.m).map(x=>x.lessonMinute);
 const end=times.length?Math.min(...times):45;
@@ -22,7 +25,7 @@ if(face.textContent!==text)face.textContent=text;
 face.title=`Lekcja ${s.lesson}: plan ${s.m}–${end} min; ${label}. Kliknij, aby sterować zegarem.`;
 face.setAttribute('aria-label',face.title);
 box.querySelector('#clockInfo').textContent=`Lekcja ${s.lesson} · ${label}`;
-box.querySelector('#clockToggle').textContent=b.since?'Pauza':b.ms?'Wznów':'Start lekcji';
+document.querySelector('#clockToggle').textContent=b.since?'Pauza':b.ms?'Wznów':'Start lekcji';
 }
 setInterval(draw,1000);window.addEventListener('pagehide',save);draw();
 })();
